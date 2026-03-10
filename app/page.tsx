@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import EzraLogo from "@/components/icons/EzraLogo";
 import { HOMEPAGE_VARIANTS } from "@/lib/constants";
 
@@ -39,11 +39,7 @@ export default function LandingPage() {
               className="group flex h-full flex-col rounded-2xl border border-border bg-white p-6 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-50 text-sm font-bold text-primary transition-colors group-hover:bg-primary group-hover:text-white">
-                {id < 3 ? (
-                  <Sparkles className="h-5 w-5" />
-                ) : (
-                  <span>{`0${id}`}</span>
-                )}
+                {`0${id}`}
               </div>
               <h2 className="mt-4 text-lg font-semibold text-foreground">
                 {title}

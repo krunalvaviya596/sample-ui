@@ -1,4 +1,4 @@
-import { Sparkles } from "lucide-react";
+import { Award } from "lucide-react";
 import { type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
@@ -20,7 +20,7 @@ export default function Badge({
         className,
       )}
     >
-      {icon && <Sparkles className="h-4 w-4 text-primary-light" />}
+      {icon && <Award className="h-4 w-4 text-primary-light" />}
       {children}
     </div>
   );

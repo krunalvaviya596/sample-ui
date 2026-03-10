@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { ArrowRight, Shield, Zap, CheckCircle } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
@@ -15,7 +15,7 @@ export default function Home1() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* ─── Hero Section (matches reference image 1) ─── */}
+      {/* Hero */}
       <section className="px-4 pt-3 sm:px-5 lg:px-6">
         <div
           className="relative mx-auto max-w-[1340px] overflow-hidden rounded-[28px]"
@@ -27,10 +27,8 @@ export default function Home1() {
           }}
         >
           <div className="relative flex min-h-[480px] flex-col justify-between sm:min-h-[560px] md:min-h-[620px] lg:min-h-[660px]">
-            {/* ── Content area ── */}
             <div className="relative z-10 px-7 pt-12 sm:px-10 sm:pt-16 md:px-14 md:pt-20 lg:px-16 lg:pt-24">
               <div className="max-w-xl">
-                {/* Heading */}
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -42,7 +40,6 @@ export default function Home1() {
                   Handled with Care.
                 </motion.h1>
 
-                {/* Subtitle */}
                 <motion.p
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -53,7 +50,6 @@ export default function Home1() {
                   — from plumbers to cleaners, in minutes.
                 </motion.p>
 
-                {/* CTA Buttons */}
                 <motion.div
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -62,7 +58,6 @@ export default function Home1() {
                 >
                   <Button variant="white" size="lg">
                     Book Instantly
-                    <Sparkles className="h-4 w-4" />
                   </Button>
                   <Button variant="dark" size="lg">
                     Post Your Job
@@ -72,7 +67,7 @@ export default function Home1() {
               </div>
             </div>
 
-            {/* ── Mascot — positioned right side ── */}
+            {/* Mascot */}
             <motion.div
               initial={{ opacity: 0, x: 30, scale: 0.92 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -81,11 +76,10 @@ export default function Home1() {
             >
               <MascotIllustration size="lg" />
             </motion.div>
-
           </div>
         </div>
 
-        {/* ── Search bar — overlapping hero bottom ── */}
+        {/* Search bar */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -96,10 +90,9 @@ export default function Home1() {
         </motion.div>
       </section>
 
-      {/* Spacer for search bar overlap */}
       <div className="h-6" />
 
-      {/* ─── Popular Services ─── */}
+      {/* Popular Services */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
@@ -116,7 +109,7 @@ export default function Home1() {
         </div>
       </section>
 
-      {/* ─── How It Works ─── */}
+      {/* How It Works */}
       <section className="bg-gray-50 py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="text-center">
@@ -161,7 +154,7 @@ export default function Home1() {
         </div>
       </section>
 
-      {/* ─── Why Ezra ─── */}
+      {/* Why Ezra */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
@@ -173,24 +166,31 @@ export default function Home1() {
             {
               title: "Verified Professionals",
               desc: "Every pro on Ezra is background-checked, reviewed, and vetted for quality.",
-              emoji: "✅",
+              Icon: CheckCircle,
+              color: "bg-green-50 text-green-600",
             },
             {
               title: "Instant Booking",
               desc: "Book a professional in under 60 seconds. No waiting, no hassle.",
-              emoji: "⚡",
+              Icon: Zap,
+              color: "bg-amber-50 text-amber-600",
             },
             {
               title: "Satisfaction Guaranteed",
               desc: "Not happy? We'll send another pro or give you a full refund.",
-              emoji: "🛡️",
+              Icon: Shield,
+              color: "bg-blue-50 text-blue-600",
             },
-          ].map(({ title, desc, emoji }) => (
+          ].map(({ title, desc, Icon, color }) => (
             <div
               key={title}
               className="rounded-2xl border border-border p-6 transition-shadow hover:shadow-lg"
             >
-              <span className="text-3xl">{emoji}</span>
+              <div
+                className={`flex h-11 w-11 items-center justify-center rounded-xl ${color}`}
+              >
+                <Icon className="h-5 w-5" />
+              </div>
               <h3 className="mt-4 text-lg font-semibold text-foreground">
                 {title}
               </h3>

@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  Sparkles,
+  Star,
   Wrench,
   Zap,
   Truck,
@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 const ICON_MAP: Record<string, LucideIcon> = {
-  sparkles: Sparkles,
+  star: Star,
   wrench: Wrench,
   zap: Zap,
   truck: Truck,

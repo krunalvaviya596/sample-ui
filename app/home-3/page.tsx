@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import {
-  Sparkles,
   ArrowRight,
   Shield,
   Clock,
@@ -23,7 +22,7 @@ const FEATURED_SERVICES = [
   {
     name: "Home Cleaning",
     desc: "Professional deep cleaning for your home",
-    Icon: Sparkles,
+    Icon: Star,
     color: "bg-violet-50 text-violet-600",
   },
   {
@@ -63,10 +62,9 @@ export default function Home3() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* ─── Hero — Split Layout ─── */}
+      {/* Hero */}
       <section className="mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-20">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Left — Text */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -74,7 +72,7 @@ export default function Home3() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary-50 px-5 py-2 text-sm font-medium text-primary"
             >
-              <Sparkles className="h-4 w-4" />
+              <Star className="h-4 w-4" />
               Trusted by 4,200+ professionals
             </motion.div>
 
@@ -113,7 +111,6 @@ export default function Home3() {
               </Button>
             </motion.div>
 
-            {/* Glassmorphism search bar */}
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
@@ -125,7 +122,6 @@ export default function Home3() {
               </span>
             </motion.div>
 
-            {/* Trust indicators */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -149,7 +145,6 @@ export default function Home3() {
             </motion.div>
           </div>
 
-          {/* Right — Image composition */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
@@ -165,7 +160,6 @@ export default function Home3() {
                 backgroundPosition: "center",
               }}
             />
-            {/* Floating stat card */}
             <div className="absolute -bottom-4 -left-4 rounded-2xl bg-white p-4 shadow-xl sm:-bottom-6 sm:-left-6 sm:p-5">
               <p className="text-2xl font-bold text-primary sm:text-3xl">
                 98%
@@ -174,7 +168,6 @@ export default function Home3() {
                 Satisfaction Rate
               </p>
             </div>
-            {/* Floating badge */}
             <div className="absolute -right-2 -top-2 flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-white shadow-lg sm:-right-4 sm:-top-4">
               <Hammer className="h-4 w-4" />
               60K+ Jobs Done
@@ -183,7 +176,7 @@ export default function Home3() {
         </div>
       </section>
 
-      {/* ─── Services Grid (4-column) ─── */}
+      {/* Services Grid */}
       <section className="bg-gray-50 py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="text-center">
@@ -221,7 +214,7 @@ export default function Home3() {
         </div>
       </section>
 
-      {/* ─── How It Works (horizontal stepper) ─── */}
+      {/* How It Works */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
@@ -230,9 +223,7 @@ export default function Home3() {
           <p className="mt-3 text-muted">Three simple steps to get help</p>
         </div>
         <div className="relative mt-12 grid gap-8 md:grid-cols-3">
-          {/* Connecting line */}
           <div className="absolute left-0 right-0 top-8 hidden h-px bg-border md:block" />
-
           {[
             {
               step: 1,
@@ -263,7 +254,7 @@ export default function Home3() {
         </div>
       </section>
 
-      {/* ─── CTA Section ─── */}
+      {/* CTA */}
       <section className="mx-auto max-w-7xl px-5 pb-16 lg:px-8 lg:pb-20">
         <div className="rounded-3xl bg-primary px-8 py-14 text-center sm:px-16">
           <h2 className="text-2xl font-bold text-white sm:text-3xl">
@@ -275,7 +266,6 @@ export default function Home3() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button variant="white" size="lg">
               Book a Service
-              <Sparkles className="h-4 w-4" />
             </Button>
             <Button
               variant="ghost"

@@ -12,7 +12,7 @@ export const STATS = [
 ] as const;
 
 export const SERVICES = [
-  { name: "Cleaning", icon: "sparkles" },
+  { name: "Cleaning", icon: "star" },
   { name: "Plumbing", icon: "wrench" },
   { name: "Electrical", icon: "zap" },
   { name: "Moving", icon: "truck" },
@@ -23,7 +23,7 @@ export const SERVICES = [
 ] as const;
 
 export const BOOKING_TABS = [
-  { id: "book", label: "Book a Service", icon: "sparkles" },
+  { id: "book", label: "Book a Service", icon: "calendar" },
   { id: "post", label: "Post a Job", icon: "clipboard-list" },
   { id: "find", label: "Find a Pro", icon: "search" },
 ] as const;

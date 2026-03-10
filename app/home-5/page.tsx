@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import {
-  Sparkles,
   ArrowRight,
   Play,
   Star,
@@ -16,13 +15,14 @@ import {
   Paintbrush,
   Home,
   Hammer,
+  Award,
 } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
 
 const SERVICES_GRID = [
-  { name: "Home Cleaning", Icon: Sparkles, color: "from-violet-500 to-purple-600" },
+  { name: "Home Cleaning", Icon: Star, color: "from-violet-500 to-purple-600" },
   { name: "Plumbing", Icon: Wrench, color: "from-blue-500 to-cyan-600" },
   { name: "Electrical", Icon: Zap, color: "from-amber-500 to-orange-600" },
   { name: "Moving", Icon: Truck, color: "from-green-500 to-emerald-600" },
@@ -37,10 +37,9 @@ export default function Home5() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* ─── Hero — Premium Asymmetric ─── */}
+      {/* Hero */}
       <section className="mx-auto max-w-7xl px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-16">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Left — Text */}
           <div>
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -48,7 +47,7 @@ export default function Home5() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary-50 px-5 py-2 text-sm font-medium text-primary"
             >
-              <Sparkles className="h-4 w-4" />
+              <Award className="h-4 w-4" />
               Israel&apos;s #1 Home Services Platform
             </motion.div>
 
@@ -92,7 +91,7 @@ export default function Home5() {
             </motion.div>
           </div>
 
-          {/* Right — Floating service cards */}
+          {/* Floating service cards */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
@@ -100,9 +99,8 @@ export default function Home5() {
             className="relative hidden lg:block"
           >
             <div className="relative h-[480px]">
-              {/* Floating glassmorphism cards */}
               {[
-                { name: "Cleaning", Icon: Sparkles, top: "0%", left: "10%", delay: 0.3 },
+                { name: "Cleaning", Icon: Star, top: "0%", left: "10%", delay: 0.3 },
                 { name: "Plumbing", Icon: Wrench, top: "15%", left: "55%", delay: 0.4 },
                 { name: "Electrical", Icon: Zap, top: "42%", left: "5%", delay: 0.5 },
                 { name: "Moving", Icon: Truck, top: "50%", left: "50%", delay: 0.6 },
@@ -126,15 +124,13 @@ export default function Home5() {
                   </div>
                 </motion.div>
               ))}
-
-              {/* Decorative gradient circle */}
               <div className="absolute left-1/2 top-1/2 -z-10 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-primary/10 to-violet-500/10 blur-3xl" />
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ─── Stats band ─── */}
+      {/* Stats */}
       <section className="border-y border-border bg-gray-50">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-5 py-10 md:grid-cols-4 lg:px-8">
           {[
@@ -154,7 +150,7 @@ export default function Home5() {
         </div>
       </section>
 
-      {/* ─── Premium Services Grid ─── */}
+      {/* Services Grid */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
         <div className="flex items-end justify-between">
           <div>
@@ -177,7 +173,6 @@ export default function Home5() {
               transition={{ duration: 0.4, delay: 0.05 * i }}
               className="group cursor-pointer overflow-hidden rounded-2xl border border-border bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
             >
-              {/* Gradient header */}
               <div
                 className={`flex h-20 items-center justify-center bg-gradient-to-br ${color}`}
               >
@@ -193,7 +188,7 @@ export default function Home5() {
         </div>
       </section>
 
-      {/* ─── How Ezra Works ─── */}
+      {/* How It Works */}
       <section className="bg-gray-50 py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="text-center">
@@ -202,7 +197,6 @@ export default function Home5() {
             </h2>
             <p className="mt-3 text-muted">Three simple steps to get help</p>
           </div>
-
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {[
               {
@@ -240,7 +234,7 @@ export default function Home5() {
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
+      {/* CTA */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
         <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-primary-dark via-primary to-violet-500 px-8 py-14 text-center sm:px-16">
           <h2 className="text-2xl font-bold text-white sm:text-3xl">

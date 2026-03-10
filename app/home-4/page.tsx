@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import {
-  Sparkles,
   ArrowRight,
   Search,
   Star,
@@ -12,6 +11,7 @@ import {
   Zap,
   Truck,
   Paintbrush,
+  Award,
 } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -25,7 +25,7 @@ const PROS = [
 ];
 
 const CATEGORY_PILLS = [
-  { label: "Cleaning", Icon: Sparkles },
+  { label: "Cleaning", Icon: Star },
   { label: "Plumbing", Icon: Wrench },
   { label: "Electrical", Icon: Zap },
   { label: "Moving", Icon: Truck },
@@ -37,7 +37,7 @@ export default function Home4() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* ─── Hero — Animated Gradient ─── */}
+      {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-violet-500" />
         <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-white/5" />
@@ -52,7 +52,7 @@ export default function Home4() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm text-white backdrop-blur-sm"
             >
-              <Sparkles className="h-4 w-4" />
+              <Award className="h-4 w-4" />
               Over 60,000 jobs completed
             </motion.div>
 
@@ -77,7 +77,6 @@ export default function Home4() {
               work, guaranteed.
             </motion.p>
 
-            {/* Rounded search component */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -107,7 +106,6 @@ export default function Home4() {
               </div>
             </motion.div>
 
-            {/* Category pills */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -128,7 +126,7 @@ export default function Home4() {
         </div>
       </section>
 
-      {/* ─── Floating Pro Cards ─── */}
+      {/* Featured Pros */}
       <section className="relative z-10 -mt-10 px-5 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -158,7 +156,7 @@ export default function Home4() {
         </div>
       </section>
 
-      {/* ─── Features ─── */}
+      {/* Features */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
@@ -207,7 +205,7 @@ export default function Home4() {
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
+      {/* CTA */}
       <section className="bg-gray-50 py-16 lg:py-20">
         <div className="mx-auto max-w-3xl px-5 text-center">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
@@ -219,7 +217,6 @@ export default function Home4() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button variant="primary" size="lg">
               Book a Service
-              <Sparkles className="h-4 w-4" />
             </Button>
             <Button variant="outline" size="lg">
               Learn More

@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles, ClipboardList, Search, ChevronDown } from "lucide-react";
+import { Calendar, ClipboardList, Search, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const TABS = [
-  { id: "book", label: "Book a Service", Icon: Sparkles },
+  { id: "book", label: "Book a Service", Icon: Calendar },
   { id: "post", label: "Post a Job", Icon: ClipboardList },
   { id: "find", label: "Find a Pro", Icon: Search },
 ] as const;
@@ -31,7 +31,6 @@ export default function BookingForm({ className = "" }: BookingFormProps) {
         className,
       )}
     >
-      {/* Tabs */}
       <div className="flex items-center gap-2 px-5 pt-5 sm:px-7">
         {TABS.map(({ id, label, Icon }) => (
           <button
@@ -50,10 +49,8 @@ export default function BookingForm({ className = "" }: BookingFormProps) {
         ))}
       </div>
 
-      {/* Divider */}
       <div className="mx-5 mt-4 h-px bg-border sm:mx-7" />
 
-      {/* Form fields */}
       <div className="flex flex-col items-stretch gap-4 p-5 sm:p-7 md:flex-row md:items-end md:gap-0">
         {FIELDS.map(({ label, value }, index) => (
           <div
@@ -76,7 +73,6 @@ export default function BookingForm({ className = "" }: BookingFormProps) {
           </div>
         ))}
 
-        {/* Search button */}
         <button className="flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-8 py-3 font-semibold text-white shadow-lg shadow-primary/25 transition-colors hover:bg-primary-hover">
           <Search className="h-4 w-4" />
           Search
