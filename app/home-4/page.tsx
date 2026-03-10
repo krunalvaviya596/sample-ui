@@ -8,6 +8,10 @@ import {
   Star,
   CheckCircle2,
   MapPin,
+  Wrench,
+  Zap,
+  Truck,
+  Paintbrush,
 } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -20,38 +24,43 @@ const PROS = [
   { name: "Dan R.", role: "Handyman", rating: 4.9, jobs: 289 },
 ];
 
+const CATEGORY_PILLS = [
+  { label: "Cleaning", Icon: Sparkles },
+  { label: "Plumbing", Icon: Wrench },
+  { label: "Electrical", Icon: Zap },
+  { label: "Moving", Icon: Truck },
+  { label: "Painting", Icon: Paintbrush },
+];
+
 export default function Home4() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Hero — Gradient with floating elements */}
+      {/* ─── Hero — Animated Gradient ─── */}
       <section className="relative overflow-hidden">
-        {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-violet-500" />
-
-        {/* Decorative circles */}
         <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-white/5" />
         <div className="absolute -bottom-48 -right-48 h-[500px] w-[500px] rounded-full bg-white/5" />
         <div className="absolute right-1/4 top-1/3 h-48 w-48 rounded-full bg-white/5" />
 
-        <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-16 lg:px-8 lg:pb-28 lg:pt-24">
+        <div className="relative mx-auto max-w-7xl px-5 pb-24 pt-16 lg:px-8 lg:pb-32 lg:pt-24">
           <div className="mx-auto max-w-3xl text-center">
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white backdrop-blur-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm text-white backdrop-blur-sm"
             >
               <Sparkles className="h-4 w-4" />
               Over 60,000 jobs completed
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mt-6 text-4xl font-bold leading-[1.1] text-white sm:text-5xl lg:text-6xl"
+              className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[64px]"
             >
               Find the Right Pro
               <br />
@@ -59,18 +68,18 @@ export default function Home4() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mx-auto mt-5 max-w-lg text-lg text-white/75"
             >
-              Israel&apos;s most trusted platform for home services.
-              Quality work, guaranteed.
+              Israel&apos;s most trusted platform for home services. Quality
+              work, guaranteed.
             </motion.p>
 
-            {/* Search bar */}
+            {/* Rounded search component */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
               className="mx-auto mt-10 max-w-2xl"
@@ -97,23 +106,40 @@ export default function Home4() {
                 </Button>
               </div>
             </motion.div>
+
+            {/* Category pills */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mx-auto mt-6 flex flex-wrap justify-center gap-2"
+            >
+              {CATEGORY_PILLS.map(({ label, Icon }) => (
+                <span
+                  key={label}
+                  className="flex cursor-pointer items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/80 backdrop-blur-sm transition-colors hover:bg-white/20"
+                >
+                  <Icon className="h-3.5 w-3.5" />
+                  {label}
+                </span>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Floating Pro Cards */}
-      <section className="relative -mt-10 z-10 px-5 lg:px-8">
+      {/* ─── Floating Pro Cards ─── */}
+      <section className="relative z-10 -mt-10 px-5 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {PROS.map(({ name, role, rating, jobs }, i) => (
               <motion.div
                 key={name}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                transition={{ duration: 0.5, delay: 0.4 + i * 0.08 }}
                 className="rounded-2xl border border-border bg-white p-5 shadow-lg transition-shadow hover:shadow-xl"
               >
-                {/* Avatar placeholder */}
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-50 text-lg font-bold text-primary">
                   {name[0]}
                 </div>
@@ -132,7 +158,7 @@ export default function Home4() {
         </div>
       </section>
 
-      {/* Features */}
+      {/* ─── Features ─── */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
@@ -169,9 +195,8 @@ export default function Home4() {
             </div>
           </div>
 
-          {/* Visual */}
           <div
-            className="aspect-square rounded-3xl lg:aspect-[4/3]"
+            className="aspect-square rounded-3xl shadow-xl lg:aspect-[4/3]"
             style={{
               backgroundImage:
                 "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop')",
@@ -182,7 +207,7 @@ export default function Home4() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ─── CTA ─── */}
       <section className="bg-gray-50 py-16 lg:py-20">
         <div className="mx-auto max-w-3xl px-5 text-center">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">

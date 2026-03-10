@@ -15,92 +15,91 @@ export default function Home1() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="px-4 pt-4 sm:px-6 lg:px-8">
+      {/* ─── Hero Section (matches reference image 1) ─── */}
+      <section className="px-4 pt-3 sm:px-5 lg:px-6">
         <div
-          className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl"
+          className="relative mx-auto max-w-[1340px] overflow-hidden rounded-[28px]"
           style={{
             backgroundImage:
-              "linear-gradient(to bottom right, rgba(15, 23, 42, 0.55), rgba(91, 33, 182, 0.35)), url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1920&q=80&auto=format&fit=crop')",
+              "linear-gradient(135deg, rgba(10, 15, 30, 0.60) 0%, rgba(88, 28, 180, 0.28) 100%), url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1920&q=80&auto=format&fit=crop')",
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "center 40%",
           }}
         >
-          <div className="relative flex min-h-[540px] flex-col justify-between px-6 pb-0 pt-10 sm:min-h-[600px] sm:px-10 md:px-14 lg:min-h-[640px] lg:px-16 lg:pt-14">
-            {/* Text + CTA */}
-            <div className="relative z-10 max-w-xl">
-              <motion.h1
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-4xl font-bold leading-[1.1] text-white sm:text-5xl md:text-6xl"
-              >
-                Every Home Task,
-                <br />
-                Handled with Care.
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.15 }}
-                className="mt-5 max-w-md text-base leading-relaxed text-white/80 sm:text-lg"
-              >
-                Connect with trusted, vetted professionals across Israel —
-                from plumbers to cleaners, in minutes.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="mt-8 flex flex-wrap gap-4"
-              >
-                <Button variant="white" size="lg">
-                  Book Instantly
-                  <Sparkles className="h-4 w-4" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="lg"
-                  className="border border-white/30 text-white hover:bg-white/10"
+          <div className="relative flex min-h-[480px] flex-col justify-between sm:min-h-[560px] md:min-h-[620px] lg:min-h-[660px]">
+            {/* ── Content area ── */}
+            <div className="relative z-10 px-7 pt-12 sm:px-10 sm:pt-16 md:px-14 md:pt-20 lg:px-16 lg:pt-24">
+              <div className="max-w-xl">
+                {/* Heading */}
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="text-[36px] font-bold leading-[1.08] tracking-tight text-white sm:text-[44px] md:text-[52px] lg:text-[58px]"
                 >
-                  Post Your Job
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </motion.div>
+                  Every Home Task,
+                  <br />
+                  Handled with Care.
+                </motion.h1>
+
+                {/* Subtitle */}
+                <motion.p
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.15 }}
+                  className="mt-5 max-w-[380px] text-[15px] leading-relaxed text-white/75 sm:text-base"
+                >
+                  Connect with trusted, vetted professionals across Israel
+                  — from plumbers to cleaners, in minutes.
+                </motion.p>
+
+                {/* CTA Buttons */}
+                <motion.div
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="mt-8 flex flex-wrap gap-3 sm:gap-4"
+                >
+                  <Button variant="white" size="lg">
+                    Book Instantly
+                    <Sparkles className="h-4 w-4" />
+                  </Button>
+                  <Button variant="dark" size="lg">
+                    Post Your Job
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </motion.div>
+              </div>
             </div>
 
-            {/* Mascot */}
+            {/* ── Mascot — positioned right side ── */}
             <motion.div
-              initial={{ opacity: 0, x: 40, scale: 0.9 }}
+              initial={{ opacity: 0, x: 30, scale: 0.92 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="pointer-events-none absolute -right-4 bottom-8 hidden md:block lg:-right-2 lg:bottom-6"
+              className="pointer-events-none absolute bottom-10 right-2 hidden md:block lg:bottom-8 lg:right-6"
             >
               <MascotIllustration size="lg" />
             </motion.div>
 
-            {/* Search bar — overlapping bottom */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.45 }}
-              className="relative z-10 mx-auto mb-[-28px] w-full max-w-3xl translate-y-[28px]"
-            >
-              <SearchBar
-                placeholder="What you need help"
-                className="border border-gray-100"
-              />
-            </motion.div>
           </div>
         </div>
+
+        {/* ── Search bar — overlapping hero bottom ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.45 }}
+          className="relative z-10 mx-auto -mt-7 w-full max-w-[680px] px-4 sm:px-0"
+        >
+          <SearchBar placeholder="What you need help" />
+        </motion.div>
       </section>
 
       {/* Spacer for search bar overlap */}
-      <div className="h-16" />
+      <div className="h-6" />
 
-      {/* Popular Services */}
+      {/* ─── Popular Services ─── */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
@@ -117,7 +116,7 @@ export default function Home1() {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* ─── How It Works ─── */}
       <section className="bg-gray-50 py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="text-center">
@@ -162,7 +161,7 @@ export default function Home1() {
         </div>
       </section>
 
-      {/* Why Ezra */}
+      {/* ─── Why Ezra ─── */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">

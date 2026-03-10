@@ -23,7 +23,7 @@ export default function Navbar({ className = "" }: NavbarProps) {
         </Link>
 
         {/* Desktop nav links */}
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-10 md:flex">
           {NAV_LINKS.map(({ label, href }) => (
             <li key={label}>
               <Link

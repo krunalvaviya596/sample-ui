@@ -15,18 +15,18 @@ export default function Home2() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="px-4 pt-4 sm:px-6 lg:px-8">
+      {/* ─── Hero Section (matches reference image 2) ─── */}
+      <section className="px-4 pt-3 sm:px-5 lg:px-6">
         <div
-          className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl"
+          className="relative mx-auto max-w-[1340px] overflow-hidden rounded-[28px]"
           style={{
             backgroundImage:
-              "linear-gradient(to bottom right, rgba(15, 23, 42, 0.50), rgba(15, 23, 42, 0.35)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80&auto=format&fit=crop')",
+              "linear-gradient(160deg, rgba(10, 15, 30, 0.58) 0%, rgba(10, 15, 30, 0.32) 100%), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80&auto=format&fit=crop')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
-          <div className="relative flex min-h-[520px] flex-col justify-between px-6 pb-10 pt-8 sm:min-h-[580px] sm:px-10 md:px-14 lg:min-h-[620px] lg:px-16 lg:pt-12">
+          <div className="relative min-h-[480px] px-7 pt-8 sm:min-h-[560px] sm:px-10 sm:pt-10 md:min-h-[620px] md:px-14 lg:min-h-[660px] lg:px-16">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -36,48 +36,47 @@ export default function Home2() {
               <Badge>Israel&apos;s #1 Home Services Platform</Badge>
             </motion.div>
 
-            {/* Heading + Subtitle + Stats */}
-            <div className="relative z-10 max-w-2xl">
-              <motion.h1
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl font-bold leading-[1.1] sm:text-5xl md:text-6xl"
-              >
-                <span className="text-white">Every Home Task,</span>
-                <br />
-                <span className="text-white/75">Handled with Care.</span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.25 }}
-                className="mt-5 max-w-md text-base leading-relaxed text-white/70 sm:text-lg"
-              >
-                Connect with trusted, vetted professionals across Israel —
-                from plumbers to cleaners, in minutes.
-              </motion.p>
-
-              {/* Stats */}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="mt-8 flex gap-8 sm:gap-12"
-              >
-                {STATS.map(({ value, label }) => (
-                  <StatItem key={label} value={value} label={label} />
-                ))}
-              </motion.div>
-            </div>
-
-            {/* Mascot */}
-            <motion.div
+            {/* Heading */}
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mt-6 text-[36px] font-bold leading-[1.08] tracking-tight sm:mt-8 sm:text-[44px] md:text-[52px] lg:text-[58px]"
+            >
+              <span className="text-white">Every Home Task,</span>
+              <br />
+              <span className="text-white/65">Handled with Care.</span>
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="mt-4 max-w-[380px] text-[15px] leading-relaxed text-white/65 sm:text-base"
+            >
+              Connect with trusted, vetted professionals across Israel —
+              from plumbers to cleaners, in minutes.
+            </motion.p>
+
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-8 flex gap-8 sm:mt-10 sm:gap-12"
+            >
+              {STATS.map(({ value, label }) => (
+                <StatItem key={label} value={value} label={label} />
+              ))}
+            </motion.div>
+
+            {/* Mascot — small, bottom-right */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="pointer-events-none absolute bottom-4 right-6 hidden md:block lg:right-10"
+              className="pointer-events-none absolute bottom-3 right-4 hidden md:block lg:bottom-4 lg:right-8"
             >
               <MascotIllustration size="sm" />
             </motion.div>
@@ -85,19 +84,19 @@ export default function Home2() {
         </div>
       </section>
 
-      {/* Booking Form — overlapping hero bottom */}
-      <div className="px-4 sm:px-6 lg:px-8">
+      {/* ─── Booking Form — overlapping hero bottom ─── */}
+      <div className="px-4 sm:px-5 lg:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="relative z-20 mx-auto -mt-10 max-w-5xl"
+          className="relative z-20 mx-auto -mt-10 max-w-[960px] sm:-mt-12"
         >
           <BookingForm />
         </motion.div>
       </div>
 
-      {/* Popular Services */}
+      {/* ─── Popular Services ─── */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
@@ -114,7 +113,7 @@ export default function Home2() {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* ─── How It Works ─── */}
       <section className="bg-gray-50 py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="text-center">
@@ -159,7 +158,7 @@ export default function Home2() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* ─── Testimonials ─── */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">

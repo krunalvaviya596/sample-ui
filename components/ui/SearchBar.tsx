@@ -1,6 +1,6 @@
 "use client";
 
-import { Search } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface SearchBarProps {
   placeholder?: string;
@@ -13,18 +13,12 @@ export default function SearchBar({
 }: SearchBarProps) {
   return (
     <div
-      className={`
-        flex items-center gap-3 rounded-2xl bg-white
-        px-6 py-4 shadow-xl shadow-black/5
-        ${className}
-      `}
+      className={cn(
+        "rounded-2xl bg-white px-7 py-5 shadow-xl shadow-black/5",
+        className,
+      )}
     >
-      <Search className="h-5 w-5 shrink-0 text-muted" />
-      <input
-        type="text"
-        placeholder={placeholder}
-        className="w-full bg-transparent text-base text-foreground outline-none placeholder:text-muted"
-      />
+      <span className="text-[15px] text-gray-400">{placeholder}</span>
     </div>
   );
 }
